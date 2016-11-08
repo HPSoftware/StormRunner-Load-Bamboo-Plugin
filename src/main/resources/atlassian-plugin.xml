@@ -1,0 +1,31 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">StormRunner_app-icon_app.png</param>
+        <param name="plugin-logo">StormRunner_app-icon_app.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="srl"/>
+    <taskType key="srlTask" name="HPE StormRunner Load" class="com.hpe.srl.tasks.SRLTestTask">
+        <description>Run a test in your HPE StormRunner Load account.
+        </description>
+        <configuration class="com.hpe.srl.taskConfigurator.SRLTaskConfigurator"/>
+        <resource type="freemarker" name="edit" location="editExampleTask.ftl"/>
+        <resource type="freemarker" name="view" location="viewExampleTask.ftl"/>
+        <resource type="download" name="icon" location="StormRunner_app-icon_app.png"/>
+    </taskType>
+    <!--&lt;!&ndash; add our web resources &ndash;&gt;-->
+    <!--<web-resource key="srl-resources" name="srl Web Resources">-->
+        <!--<dependency>com.atlassian.auiplugin:ajs</dependency>-->
+        <!-- -->
+        <!--<resource type="download" name="srl.css" location="/css/srl.css"/>-->
+        <!--<resource type="download" name="srl.js" location="/js/srl.js"/>-->
+        <!--<resource type="download" name="images/" location="/images"/>-->
+
+        <!--<context>srl</context>-->
+    <!--</web-resource>-->
+    
+</atlassian-plugin>

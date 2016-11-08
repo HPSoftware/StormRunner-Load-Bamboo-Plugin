@@ -1,0 +1,7 @@
+[@ww.textfield labelKey="srl.tenantId" name="tenantId" required='true'/]
+[@ww.textfield labelKey="srl.projectId" name="projectId" required='true'/]
+[@ww.textfield labelKey="srl.testId" name="testId" required='true'/]
+[@ww.checkbox labelKey="srl.sync" name="sync" required='false'/]
+[@ww.textfield labelKey="srl.testTimeOut" name="testTimeOut" required='false'/]
+[@ww.textfield labelKey="srl.userName" name="userName" required='true'/]
+[@ww.password labelKey="srl.password" name="password" required='true'/]
