@@ -43,6 +43,8 @@ public class SRLTaskConfigurator extends AbstractTaskConfigurator {
             errorCollection.addError("projectId", "You must enter project id");
         } else if(!StringUtils.isNumeric(projectIdValue)) {
             errorCollection.addError("projectId", "Project id must be a number");
+        } else if (StringUtils.length(projectIdValue) > 20) {
+            errorCollection.addError("projectId", "Project id variable cannot extend 20 characters");
         }
 
         final String testIdValue = params.getString("testId");
@@ -50,6 +52,8 @@ public class SRLTaskConfigurator extends AbstractTaskConfigurator {
             errorCollection.addError("testId", "You must enter test id");
         } else if(!StringUtils.isNumeric(testIdValue)) {
             errorCollection.addError("testId", "Test id must be a number");
+        } else if (StringUtils.length(testIdValue) > 20) {
+            errorCollection.addError("testId", "Test id variable cannot extend 20 characters");
         }
 
 
@@ -58,21 +62,29 @@ public class SRLTaskConfigurator extends AbstractTaskConfigurator {
             errorCollection.addError("tenantId", "You must enter tenant id");
         } else if(!StringUtils.isNumeric(tenantId)) {
             errorCollection.addError("tenantId", "Tenant id must be a number");
+        } else if (StringUtils.length(tenantId) > 20) {
+            errorCollection.addError("tenantId", "Tenant id variable cannot extend 20 characters");
         }
 
         final String userName = params.getString("userName");
         if (StringUtils.isEmpty(userName)){
             errorCollection.addError("userName", "You must enter user name");
+        } else if (StringUtils.length(projectIdValue) > 20) {
+            errorCollection.addError("userName", "User name variable cannot extend 20 characters");
         }
 
         final String password = params.getString("password");
         if (StringUtils.isEmpty(password)){
             errorCollection.addError("password", "You must enter password");
+        } else if (StringUtils.length(projectIdValue) > 20) {
+            errorCollection.addError("password", "Password variable cannot extend 20 characters");
         }
 
         final String testTimeOut = params.getString("testTimeOut");
         if (!StringUtils.isEmpty(password) && !StringUtils.isNumeric(testTimeOut)){
             errorCollection.addError("testTimeOut", "Test time out must be a number");
+        } else if (StringUtils.length(projectIdValue) > 20) {
+            errorCollection.addError("testTimeOut", "Test time out variable cannot extend 20 characters");
         }
     }
 
