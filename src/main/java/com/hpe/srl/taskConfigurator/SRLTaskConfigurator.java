@@ -60,9 +60,7 @@ public class SRLTaskConfigurator extends AbstractTaskConfigurator {
         final String tenantId = params.getString("tenantId");
         if (StringUtils.isEmpty(tenantId)){
             errorCollection.addError("tenantId", "You must enter tenant id");
-        } else if(!StringUtils.isNumeric(tenantId)) {
-            errorCollection.addError("tenantId", "Tenant id must be a number");
-        } else if (StringUtils.length(tenantId) > 20) {
+        }  else if (StringUtils.length(tenantId) > 20) {
             errorCollection.addError("tenantId", "Tenant id variable cannot extend 20 characters");
         }
 
